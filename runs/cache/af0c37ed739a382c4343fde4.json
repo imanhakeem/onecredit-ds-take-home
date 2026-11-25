@@ -1,0 +1,29 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Summarise this company for a team vetting suppliers. Keep it short.\n\n{\"registrationNumber\":\"SYN-000333\",\"profile\":{\"companyName\":\"Gemilang Harmoni Enterprise Sdn. Bhd.\",\"status\":\"Active\",\"companyType\":\"Private limited company\",\"incorporationDate\":\"1997-10-21\",\"industry\":\"Retail\",\"state\":\"Sarawak\",\"natureOfBusiness\":\"Retail of textiles and baju kurung\",\"shareCapital\":5000000,\"formerNames\":[{\"name\":\"Unity Industries Sdn. Bhd.\",\"changedOn\":\"2025-09-03\"}]},\"relationships\":{\"directors\":[{\"name\":\"Director 1\",\"designation\":\"Managing Director\",\"appointedOn\":\"2014-04-06\"},{\"name\":\"Director 2\",\"designation\":\"Director\",\"appointedOn\":\"2023-01-28\"},{\"name\":\"Director 3\",\"designation\":\"Director\",\"appointedOn\":\"2010-08-09\"}],\"shareholders\":[{\"type\":\"individual\",\"name\":\"Director 1\",\"percentage\":25.02},{\"type\":\"individual\",\"name\":\"Director 2\",\"percentage\":45.57},{\"type\":\"individual\",\"name\":\"Director 3\",\"percentage\":29.41}]},\"financials\":{\"years\":[]},\"litigation\":{\"cases\":[]}}"
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Gemilang Harmoni Enterprise Sdn. Bhd. – Supplier Vetting Snapshot**\n\n- **Registration No.:** SYN‑000333  \n- **Status:** Active (Private Limited)  \n- **Incorporated:** 21 Oct 1997 (Sarawak)  \n- **Industry / Business:** Retail – specializes in textiles and *baju kurung* (traditional Malay attire)  \n- **Share Capital:** RM 5,000,000  \n- **Former Name:** Unity Industries Sdn. Bhd. (changed 3 Sep 2025)  \n\n**Key Personnel & Ownership**  \n| Role | Name | Appointment | Share % |\n|------|------|--------------|---------|\n| Managing Director | Director 1 | 6 Apr 2014 | 25.02 % |\n| Director | Director 2 | 28 Jan 2023 | 45.57 % |\n| Director | Director 3 | 9 Aug 2010 | 29.41 % |\n\n- All three directors are also the sole shareholders, holding the entire equity split above.\n\n**Financial & Legal Track Record**  \n- No financial statements submitted (no data for past years).  \n- No recorded litigation or legal disputes.\n\n**Risk Highlights**  \n- **Positive:** Long‑standing, active company with clear ownership; no litigation history.  \n- **Potential Concern:** Absence of disclosed financials makes it difficult to assess profitability, cash flow, and creditworthiness. Request recent audited accounts or bank statements before final approval.  \n\n**Bottom Line:** A well‑established, privately held retailer in Sarawak with stable leadership, but financial transparency needs to be verified.",
+ "raw": "**Gemilang Harmoni Enterprise Sdn. Bhd. – Supplier Vetting Snapshot**\n\n- **Registration No.:** SYN‑000333  \n- **Status:** Active (Private Limited)  \n- **Incorporated:** 21 Oct 1997 (Sarawak)  \n- **Industry / Business:** Retail – specializes in textiles and *baju kurung* (traditional Malay attire)  \n- **Share Capital:** RM 5,000,000  \n- **Former Name:** Unity Industries Sdn. Bhd. (changed 3 Sep 2025)  \n\n**Key Personnel & Ownership**  \n| Role | Name | Appointment | Share % |\n|------|------|--------------|---------|\n| Managing Director | Director 1 | 6 Apr 2014 | 25.02 % |\n| Director | Director 2 | 28 Jan 2023 | 45.57 % |\n| Director | Director 3 | 9 Aug 2010 | 29.41 % |\n\n- All three directors are also the sole shareholders, holding the entire equity split above.\n\n**Financial & Legal Track Record**  \n- No financial statements submitted (no data for past years).  \n- No recorded litigation or legal disputes.\n\n**Risk Highlights**  \n- **Positive:** Long‑standing, active company with clear ownership; no litigation history.  \n- **Potential Concern:** Absence of disclosed financials makes it difficult to assess profitability, cash flow, and creditworthiness. Request recent audited accounts or bank statements before final approval.  \n\n**Bottom Line:** A well‑established, privately held retailer in Sarawak with stable leadership, but financial transparency needs to be verified.",
+ "usage": {
+  "queue_time": 0.888447777,
+  "prompt_tokens": 326,
+  "prompt_time": 0.021262689,
+  "completion_tokens": 359,
+  "completion_time": 0.756378138,
+  "total_tokens": 685,
+  "total_time": 0.777640827,
+  "completion_tokens_details": {
+   "reasoning_tokens": 4
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795601028.8580375
+}

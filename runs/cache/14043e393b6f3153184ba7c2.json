@@ -1,0 +1,33 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Unity Maju Makanan Sdn. Bhd. (SYN-001569)\nBusiness: Halal catering for corporate events and weddings. Industry: Food & Beverage. State: Kelantan.\nStatus: Active. Incorporated 2017-09-26 (8 years old). Share capital RM5.00m.\nRule-based risk tier: High\n\nRed flags (most severe first):\n- [critical] FY2022 audit: 'Disclaimer of opinion' (Audit Firm 5).\n- [minor] Latest accounts are for the year to 2024-06-30, 18 months before the record date.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-06-30).\n- FY2024: revenue RM6.26m, profit after tax RM195k (net margin 3.1%), operating cash flow RM633k.\n- FY2024 balance sheet: equity RM3.90m, borrowings RM4.14m, cash RM550k, liabilities/assets 60%, current ratio 1.31, interest cover 2.13x.\n- Revenue change FY2022->FY2024: 5.2%; FY2023->FY2024: 3.3%.\n- Audit: FY2022 Disclaimer of opinion (Audit Firm 5); FY2023 Unqualified (Audit Firm 5); FY2024 Unqualified (Audit Firm 5)\n\nPeople and ownership:\n- 5 directors. No majority holder; largest is Director 4 with 38%.\n- Shareholders: Director 4 38%, Director 2 32.98%, Director 1 17.38%, Director 3 11.64%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: High**: FY2022 audit issued a disclaimer of opinion, indicating serious accounting concerns.  \n\nUnity Maju Makanan Sdn. Bhd. provides halal catering for corporate events and weddings in Kelantan; incorporated in 2017, it reported revenue of RM6.26m in FY2024.  \n\n**Red flags**\n- FY2022 audit: Disclaimer of opinion (Audit Firm 5) – critical.\n- Latest filed accounts are for the year to 2024‑06‑30, 18 months before the record date – minor.\n\n**Financials (FY2024):** Revenue RM6.26m, up 3.3% from FY2023; profit after tax RM195k (3.1% margin); operating cash flow RM633k; equity RM3.90m versus borrowings RM4.14m; current ratio 1.31, interest cover 2.13x.  \n\n**Ownership & litigation:** No majority shareholder; Director 4 holds the largest stake at 38%, followed by Director 2 (32.98%), Director 1 (17.38%) and Director 3 (11.64%). No court cases recorded.",
+ "raw": "**Risk: High**: FY2022 audit issued a disclaimer of opinion, indicating serious accounting concerns.  \n\nUnity Maju Makanan Sdn. Bhd. provides halal catering for corporate events and weddings in Kelantan; incorporated in 2017, it reported revenue of RM6.26m in FY2024.  \n\n**Red flags**\n- FY2022 audit: Disclaimer of opinion (Audit Firm 5) – critical.\n- Latest filed accounts are for the year to 2024‑06‑30, 18 months before the record date – minor.\n\n**Financials (FY2024):** Revenue RM6.26m, up 3.3% from FY2023; profit after tax RM195k (3.1% margin); operating cash flow RM633k; equity RM3.90m versus borrowings RM4.14m; current ratio 1.31, interest cover 2.13x.  \n\n**Ownership & litigation:** No majority shareholder; Director 4 holds the largest stake at 38%, followed by Director 2 (32.98%), Director 1 (17.38%) and Director 3 (11.64%). No court cases recorded.",
+ "usage": {
+  "queue_time": 0.369826887,
+  "prompt_tokens": 839,
+  "prompt_time": 0.041280701,
+  "completion_tokens": 289,
+  "completion_time": 0.6133533,
+  "total_tokens": 1128,
+  "total_time": 0.654634001,
+  "completion_tokens_details": {
+   "reasoning_tokens": 35
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795599700.045766
+}

@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Unity Global Trading Sdn. Bhd. (SYN-000029)\nBusiness: Retail of textiles and baju kurung. Industry: Retail. State: Selangor.\nStatus: Active. Incorporated 2018-06-15 (7 years old). Share capital RM250k.\nRule-based risk tier: Elevated\n\nRed flags (most severe first):\n- [major] 2 of 5 directors appointed in the last 12 months including the majority shareholder: Director 4 (2025-11-30), Director 5 (2025-11-01).\n- [minor] Latest accounts are for the year to 2024-06-30, 18 months before the record date.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-06-30).\n- FY2024: revenue RM5.35m, profit after tax RM97k (net margin 1.8%), operating cash flow RM114k.\n- FY2024 balance sheet: equity RM4.45m, borrowings RM2.11m, cash RM529k, liabilities/assets 45%, current ratio 1.48, interest cover 2.10x.\n- Revenue change FY2022->FY2024: 4.3%; FY2023->FY2024: 2.4%.\n- Audit: FY2022 Unqualified (Audit Firm 8); FY2023 Unqualified (Audit Firm 8); FY2024 Unqualified (Audit Firm 8)\n\nPeople and ownership:\n- 5 directors. Director 4 holds a controlling 58.25%.\n- Shareholders: Director 4 58.25%, Director 5 21.22%, Director 1 12.21%, Director 3 8.32%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Elevated**: Two directors, including the majority shareholder, were appointed within the last 12 months.\n\nUnity Global Trading Sdn. Bhd. retails textiles and baju kurung in Selangor, incorporated 15 Jun 2018 (7 years old) with share capital RM250k and FY2024 revenue RM5.35m.\n\n**Red flags**\n- Major: Director 4 appointed 30 Nov 2025, holding 58.25% and is a majority shareholder.\n- Major: Director 5 appointed 1 Nov 2025, holding 21.22%.\n- Minor: Latest filed accounts are for the year to 30 Jun 2024, 18 months before the record date.\n\n**Financials (FY2024):** Revenue RM5.35m, up 2.4% from FY2023; profit after tax RM97k; operating cash flow RM114k; equity RM4.45m, borrowings RM2.11m, cash RM529k; current ratio 1.48, interest cover 2.10×.\n\n**Ownership & litigation:** Control rests with Director 4 (58.25%); other shareholders are Director 5 (21.22%), Director 1 (12.21%) and Director 3 (8.32%). No court cases on record.",
+ "raw": "**Risk: Elevated**: Two directors, including the majority shareholder, were appointed within the last 12 months.\n\nUnity Global Trading Sdn. Bhd. retails textiles and baju kurung in Selangor, incorporated 15 Jun 2018 (7 years old) with share capital RM250k and FY2024 revenue RM5.35m.\n\n**Red flags**\n- Major: Director 4 appointed 30 Nov 2025, holding 58.25% and is a majority shareholder.\n- Major: Director 5 appointed 1 Nov 2025, holding 21.22%.\n- Minor: Latest filed accounts are for the year to 30 Jun 2024, 18 months before the record date.\n\n**Financials (FY2024):** Revenue RM5.35m, up 2.4% from FY2023; profit after tax RM97k; operating cash flow RM114k; equity RM4.45m, borrowings RM2.11m, cash RM529k; current ratio 1.48, interest cover 2.10×.\n\n**Ownership & litigation:** Control rests with Director 4 (58.25%); other shareholders are Director 5 (21.22%), Director 1 (12.21%) and Director 3 (8.32%). No court cases on record.",
+ "usage": {
+  "queue_time": 0.370462023,
+  "prompt_tokens": 857,
+  "prompt_time": 0.043241495,
+  "completion_tokens": 329,
+  "completion_time": 0.928885524,
+  "total_tokens": 1186,
+  "total_time": 0.972127019,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 37
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795599718.4974592
+}

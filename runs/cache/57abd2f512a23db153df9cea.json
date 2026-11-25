@@ -1,0 +1,25 @@
+{
+ "request": {
+  "model": "gemini-3.5-flash",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Indah Prima Medical Sdn. Bhd. (SYN-000148)\nBusiness: Community pharmacy and health supplements. Industry: Healthcare. State: Kelantan.\nStatus: Active. Incorporated 1993-04-30 (32 years old). Share capital RM500k.\nRule-based risk tier: Elevated\n\nRed flags (most severe first):\n- [major] Net loss of -RM1.08m in FY2024; losses in every year on record.\n- [major] Operating cash flow was -RM819k in FY2024.\n- [major] Current ratio 0.83: short-term debts exceed short-term assets.\n- [major] Interest cover -19.38x in FY2024 (below 1.5x).\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-09-30).\n- FY2024: revenue RM4.84m, profit after tax -RM1.08m (net margin -22.4%), operating cash flow -RM819k.\n- FY2024 balance sheet: equity RM1.88m, borrowings RM964k, cash RM547k, liabilities/assets 72%, current ratio 0.83, interest cover -19.38x.\n- Revenue change FY2022->FY2024: -12.5%; FY2023->FY2024: -9.5%.\n- Audit: FY2022 Unqualified (Audit Firm 5); FY2023 Unqualified (Audit Firm 5); FY2024 Unqualified (Audit Firm 5)\n\nPeople and ownership:\n- 5 directors. Director 4 holds a controlling 75.61%.\n- Shareholders: Director 4 75.61%, Director 5 13.5%, Director 3 10.25%, Director 1 0.64%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Elevated**: The company has suffered net losses in every year on record, alongside negative operating cash flow and weak liquidity.\n\nIndah Prima Medical Sdn. Bhd. operates a community pharmacy and sells health supplements in Kelantan, having been incorporated in 1993 with latest revenue of RM4.84m.\n\n**Red flags**\n- Net loss of -RM1.08m in FY2024, with losses in every year on record.\n- Negative operating cash flow of -RM819k in FY2024.\n- Current ratio of 0.83, indicating short-term debts exceed short-term assets.\n- Interest cover of -19.38x in FY2024.\n\n**Financials (FY2024):** Revenue fell 9.5% to RM4.84m with a net loss of -RM1.08m and negative operating cash flow of -RM819k. Borrowings stand at RM964k against cash of RM547k.\n\n**Ownership & litigation:** Director 4 holds a controlling 75.61% stake alongside Director 5 (13.5%), Director 3 (10.25%), and Director 1 (0.64%). There are no court cases on record.",
+ "usage": {
+  "completion_tokens": 287,
+  "prompt_tokens": 909,
+  "total_tokens": 1196
+ },
+ "model": "gemini-3.5-flash",
+ "at": 1795591662.3103745
+}

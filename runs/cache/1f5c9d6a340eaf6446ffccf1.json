@@ -1,0 +1,25 @@
+{
+ "request": {
+  "model": "gemini-3.5-flash",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Sinar Sinar Pelancongan Sdn. Bhd. (SYN-001212)\nBusiness: Hotel butik di Kuching. Industry: Hospitality. State: Kuala Lumpur.\nStatus: Winding up. Incorporated 1998-01-17 (27 years old). Share capital RM100k.\nRule-based risk tier: High\n\nRed flags (most severe first):\n- [critical] Company status is 'Winding up', not Active.\n- [critical] Winding-up petition(s) against the company: filed 2022-07-08, judgment entered, RM301k; filed 2021-03-28, judgment entered, RM9.47m.\n- [major] Revenue fell 35% from FY2022 to FY2024 (RM6.97m to RM4.51m).\n- [major] 1 judgment(s) entered against it, claims totalling RM243k.\n- [major] 2 pending case(s) as defendant, claims totalling RM479k (10.6% of FY2024 revenue).\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-09-30).\n- FY2024: revenue RM4.51m, profit after tax RM39k (net margin 0.9%), operating cash flow RM109k.\n- FY2024 balance sheet: equity RM7.91m, borrowings RM996k, cash RM556k, liabilities/assets 13%, current ratio 2.75, interest cover 1.93x.\n- Revenue change FY2022->FY2024: -35.3%; FY2023->FY2024: -21.8%.\n- Audit: FY2022 Unqualified (Audit Firm 8); FY2023 Unqualified (Audit Firm 8); FY2024 Unqualified (Audit Firm 8)\n\nPeople and ownership:\n- 3 directors. Director 3 holds a controlling 56.47%.\n- Shareholders: Director 3 56.47%, Director 2 33.42%, Director 1 10.11%\n\nLitigation:\n- 8 cases: 7 as defendant, 1 as plaintiff. 2 pending against it (claims RM479k), 3 judgment(s) entered against it, 2 filed after the latest accounts."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: High**: The company is under winding-up status following multiple major court judgments against it.\n\nIncorporated in 1998 (27 years old), Sinar Sinar Pelancongan Sdn. Bhd. operates a boutique hotel in Kuching, based in Kuala Lumpur, with FY2024 revenue of RM4.51m.\n\n**Red flags**\n- Company status is 'Winding up', not Active.\n- Winding-up petitions filed on 2021-03-28 (judgment entered, RM9.47m) and 2022-07-08 (judgment entered, RM301k).\n- Revenue fell 35% from FY2022 to FY2024 (RM6.97m to RM4.51m).\n- 1 judgment entered against it, claims totalling RM243k.\n- 2 pending cases as defendant, claims totalling RM479k (10.6% of FY2024 revenue).\n\n**Financials (FY2024):** Revenue dropped to RM4.51m with profit after tax of RM39k and operating cash flow of RM109k. Total borrowings stood at RM996k against cash of RM556k.\n\n**Ownership & litigation:** Director 3 holds a controlling 56.47% stake, alongside Director 2 (33.42%) and Director 1 (10.11%). The company faces 8 litigation cases (7 as defendant), including 2 filed after the latest accounts.",
+ "usage": {
+  "completion_tokens": 352,
+  "prompt_tokens": 1015,
+  "total_tokens": 2754
+ },
+ "model": "gemini-3.5-flash",
+ "at": 1795594057.572889
+}

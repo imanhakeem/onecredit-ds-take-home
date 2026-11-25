@@ -1,0 +1,29 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Summarise this company for a team vetting suppliers. Keep it short.\n\n{\"registrationNumber\":\"SYN-000302\",\"profile\":{\"companyName\":\"Global Pacific Perunding Sdn. Bhd.\",\"status\":\"Active\",\"companyType\":\"Private limited company\",\"incorporationDate\":\"2014-01-15\",\"industry\":\"Professional Services\",\"state\":\"Perak\",\"natureOfBusiness\":\"Management consulting for SMEs\",\"shareCapital\":500000,\"formerNames\":[]},\"relationships\":{\"directors\":[{\"name\":\"Director 1\",\"designation\":\"Managing Director\",\"appointedOn\":\"2021-04-15\"},{\"name\":\"Director 2\",\"designation\":\"Director\",\"appointedOn\":\"2024-05-01\"},{\"name\":\"Director 3\",\"designation\":\"Executive Director\",\"appointedOn\":\"2018-03-25\"}],\"shareholders\":[{\"type\":\"individual\",\"name\":\"Director 1\",\"percentage\":11.54},{\"type\":\"individual\",\"name\":\"Director 3\",\"percentage\":29.76},{\"type\":\"individual\",\"name\":\"Director 2\",\"percentage\":58.7}]},\"financials\":{\"years\":[]},\"litigation\":{\"cases\":[]}}"
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Company Overview – Global Pacific Perunding Sdn. Bhd. (SYN‑000302)**  \n\n- **Status & Structure**: Active private limited company, incorporated 15 Jan 2014 in Perak.  \n- **Industry & Focus**: Professional services – management consulting targeted at SMEs.  \n- **Share Capital**: RM 500,000.  \n\n**Key Personnel & Ownership**  \n| Role | Name | Appointment Date | Shareholding |\n|------|------|-------------------|--------------|\n| Managing Director | Director 1 | 15 Apr 2021 | 11.54 % |\n| Executive Director | Director 3 | 25 Mar 2018 | 29.76 % |\n| Director | Director 2 | 1 May 2024 | 58.70 % |\n\n- The three directors collectively own 100 % of the company, with Director 2 holding the majority stake.  \n\n**Financial & Legal Standing**  \n- No financial statements submitted in the data set.  \n- No recorded litigation or legal disputes.  \n\n**Vet‑Ready Takeaways**  \n- Fully owned and controlled by its three directors, indicating clear governance.  \n- Active and compliant (no litigation).  \n- Limited public financial data – request recent audited accounts and cash‑flow details before final approval.",
+ "raw": "**Company Overview – Global Pacific Perunding Sdn. Bhd. (SYN‑000302)**  \n\n- **Status & Structure**: Active private limited company, incorporated 15 Jan 2014 in Perak.  \n- **Industry & Focus**: Professional services – management consulting targeted at SMEs.  \n- **Share Capital**: RM 500,000.  \n\n**Key Personnel & Ownership**  \n| Role | Name | Appointment Date | Shareholding |\n|------|------|-------------------|--------------|\n| Managing Director | Director 1 | 15 Apr 2021 | 11.54 % |\n| Executive Director | Director 3 | 25 Mar 2018 | 29.76 % |\n| Director | Director 2 | 1 May 2024 | 58.70 % |\n\n- The three directors collectively own 100 % of the company, with Director 2 holding the majority stake.  \n\n**Financial & Legal Standing**  \n- No financial statements submitted in the data set.  \n- No recorded litigation or legal disputes.  \n\n**Vet‑Ready Takeaways**  \n- Fully owned and controlled by its three directors, indicating clear governance.  \n- Active and compliant (no litigation).  \n- Limited public financial data – request recent audited accounts and cash‑flow details before final approval.",
+ "usage": {
+  "queue_time": 0.367844585,
+  "prompt_tokens": 301,
+  "prompt_time": 0.021440423,
+  "completion_tokens": 289,
+  "completion_time": 0.608899667,
+  "total_tokens": 590,
+  "total_time": 0.63034009,
+  "completion_tokens_details": {
+   "reasoning_tokens": 5
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795601024.0022125
+}

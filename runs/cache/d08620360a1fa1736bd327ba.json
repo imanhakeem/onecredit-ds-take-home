@@ -1,0 +1,33 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Sejahtera Kirana Engineering Sdn. Bhd. (SYN-001455)\nBusiness: Kerja-kerja kejuruteraan awam jalan dan saliran. Industry: Construction. State: Terengganu.\nStatus: Active. Incorporated 2001-04-30 (24 years old). Share capital RM500k.\nRule-based risk tier: Low\n\nRed flags (most severe first):\n- [minor] Mega Holdings Sdn. Bhd. holds 60%; the people behind it are not in this record.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-12-31).\n- FY2024: revenue RM8.20m, profit after tax RM217k (net margin 2.6%), operating cash flow RM528k.\n- FY2024 balance sheet: equity RM4.26m, borrowings RM4.66m, cash RM638k, liabilities/assets 62%, current ratio 1.52, interest cover 2.12x.\n- Revenue change FY2022->FY2024: 10.2%; FY2023->FY2024: 6.3%.\n- Audit: FY2022 Unqualified (Audit Firm 7); FY2023 Unqualified (Audit Firm 7); FY2024 Unqualified (Audit Firm 7)\n\nPeople and ownership:\n- 2 directors. Mega Holdings Sdn. Bhd. (a company) holds 60%.\n- Shareholders: Mega Holdings Sdn. Bhd. 60%, Director 1 40%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Low**: Ownership is dominated by a single related entity, but no serious compliance issues are recorded.\n\nSejahtera Kirana Engineering Sdn. Bhd. does civil engineering road and drainage work in Terengganu, incorporated 30 Apr 2001, with FY2024 revenue of RM8.20m.\n\n**Red flags**\n- Mega Holdings Sdn. Bhd. holds 60%; the people behind it are not in this record.\n\n**Financials (FY2024):** Revenue RM8.20m, up 6.3% from FY2023; profit after tax RM217k (2.6% margin); operating cash flow RM528k; equity RM4.26m versus borrowings RM4.66m; current ratio 1.52, interest cover 2.12×.\n\n**Ownership & litigation:** Mega Holdings Sdn. Bhd. controls 60% and Director 1 holds the remaining 40%; two directors are listed; no court cases on record.",
+ "raw": "**Risk: Low**: Ownership is dominated by a single related entity, but no serious compliance issues are recorded.\n\nSejahtera Kirana Engineering Sdn. Bhd. does civil engineering road and drainage work in Terengganu, incorporated 30 Apr 2001, with FY2024 revenue of RM8.20m.\n\n**Red flags**\n- Mega Holdings Sdn. Bhd. holds 60%; the people behind it are not in this record.\n\n**Financials (FY2024):** Revenue RM8.20m, up 6.3% from FY2023; profit after tax RM217k (2.6% margin); operating cash flow RM528k; equity RM4.26m versus borrowings RM4.66m; current ratio 1.52, interest cover 2.12×.\n\n**Ownership & litigation:** Mega Holdings Sdn. Bhd. controls 60% and Director 1 holds the remaining 40%; two directors are listed; no court cases on record.",
+ "usage": {
+  "queue_time": 0.158312536,
+  "prompt_tokens": 813,
+  "prompt_time": 0.050218683,
+  "completion_tokens": 256,
+  "completion_time": 0.536486871,
+  "total_tokens": 1069,
+  "total_time": 0.586705554,
+  "completion_tokens_details": {
+   "reasoning_tokens": 36
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795599943.9034593
+}

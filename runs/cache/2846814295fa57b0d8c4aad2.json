@@ -1,0 +1,30 @@
+{
+ "request": {
+  "model": "qwen/qwen3.8-27b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You check summaries written for a team that vets Malaysian companies before choosing them as suppliers or\npartners. The reviewer reads the summary first to decide whether the company deserves a closer look. The record is as\nof 31 December 2025.\n\nCompare the SUMMARY with the RECORD (JSON). Be strict and specific. Do all your checking privately first.\nEach list item must be a confirmed problem, stated in one sentence. If you check a claim and it is correct, do NOT list\nit. An empty list is the right answer when there are no problems. Rounded or truncated numbers (RM5.35m for\n5,352,856) are not errors. Mentions of other companies' registration numbers come from other records; ignore them.\n\nReturn only JSON, no prose, in this shape:\n{\n  \"factual_errors\": [\"each statement in the summary that the record contradicts or does not support\"],\n  \"missed_risks\": [\"each risk a vetting reviewer would need that the summary leaves out\"],\n  \"misleading\": [\"anything technically true but likely to mislead, e.g. calling a loss-making firm 'stable'\"],\n  \"accuracy\": 1-5,       // 5 = no errors at all\n  \"risk_coverage\": 1-5,  // 5 = every material risk is there\n  \"usefulness\": 1-5,     // 5 = a reviewer could decide what to do next from this alone\n  \"concision\": 1-5       // 5 = nothing wasted, readable in under a minute\n}"
+   },
+   {
+    "role": "user",
+    "content": "RECORD:\n{\"registrationNumber\":\"SYN-000302\",\"profile\":{\"companyName\":\"Global Pacific Perunding Sdn. Bhd.\",\"status\":\"Active\",\"companyType\":\"Private limited company\",\"incorporationDate\":\"2014-01-15\",\"industry\":\"Professional Services\",\"state\":\"Perak\",\"natureOfBusiness\":\"Management consulting for SMEs\",\"shareCapital\":500000,\"formerNames\":[]},\"relationships\":{\"directors\":[{\"name\":\"Director 1\",\"designation\":\"Managing Director\",\"appointedOn\":\"2021-04-15\"},{\"name\":\"Director 2\",\"designation\":\"Director\",\"appointedOn\":\"2024-05-01\"},{\"name\":\"Director 3\",\"designation\":\"Executive Director\",\"appointedOn\":\"2018-03-25\"}],\"shareholders\":[{\"type\":\"individual\",\"name\":\"Director 1\",\"percentage\":11.54},{\"type\":\"individual\",\"name\":\"Director 3\",\"percentage\":29.76},{\"type\":\"individual\",\"name\":\"Director 2\",\"percentage\":58.7}]},\"financials\":{\"years\":[]},\"litigation\":{\"cases\":[]}}\n\nSUMMARY:\n**Risk: High**: critical issue on record, look closely before engaging.\n\nManagement consulting for SMEs (Professional Services, Perak). Active, incorporated 2014.\n\n**Red flags**\n- No financial statements on record, so size and health are unknown.\n\n**Ownership:** Director 2 holds a controlling 58.7%. 3 directors.\n**Litigation:** none on record."
+   }
+  ],
+  "temperature": 0,
+  "reasoning_effort": "default"
+ },
+ "text": "{\n  \"factual_errors\": [],\n  \"missed_risks\": [\n    \"The summary fails to mention that the company has no recorded financial statements for any year, which is a significant risk for vetting purposes.\",\n    \"The summary does not note that the company has no litigation on record, which could be a positive indicator but is omitted.\"\n  ],\n  \"misleading\": [\n    \"The summary labels the risk as 'High' due to a 'critical issue on record,' but the only issue mentioned is the lack of financial statements, which, while important, may not necessarily constitute a 'critical issue' without further context.\"\n  ],\n  \"accuracy\": 4,\n  \"risk_coverage\": 3,\n  \"usefulness\": 3,\n  \"concision\": 4\n}",
+ "raw": "{\n  \"factual_errors\": [],\n  \"missed_risks\": [\n    \"The summary fails to mention that the company has no recorded financial statements for any year, which is a significant risk for vetting purposes.\",\n    \"The summary does not note that the company has no litigation on record, which could be a positive indicator but is omitted.\"\n  ],\n  \"misleading\": [\n    \"The summary labels the risk as 'High' due to a 'critical issue on record,' but the only issue mentioned is the lack of financial statements, which, while important, may not necessarily constitute a 'critical issue' without further context.\"\n  ],\n  \"accuracy\": 4,\n  \"risk_coverage\": 3,\n  \"usefulness\": 3,\n  \"concision\": 4\n}",
+ "usage": {
+  "queue_time": 0.077135261,
+  "prompt_tokens": 696,
+  "prompt_time": 0.051104469,
+  "completion_tokens": 176,
+  "completion_time": 0.360260181,
+  "total_tokens": 872,
+  "total_time": 0.41136465
+ },
+ "model": "qwen/qwen3.8-27b",
+ "at": 1795603541.285784
+}

@@ -1,0 +1,21 @@
+{
+ "request": {
+  "model": "gemini-3.5-flash",
+  "messages": [
+   {
+    "role": "user",
+    "content": "Reply with the single word: ok"
+   }
+  ],
+  "temperature": 0,
+  "reasoning_effort": "low"
+ },
+ "text": "ok",
+ "usage": {
+  "completion_tokens": 1,
+  "prompt_tokens": 8,
+  "total_tokens": 70
+ },
+ "model": "gemini-3.5-flash",
+ "at": 1795591587.922469
+}

@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Mutiara Delima Bakery Sdn. Bhd. (SYN-000451)\nBusiness: Mengusahakan kedai kopi dan kafe di Penang. Industry: Food & Beverage. State: Kuala Lumpur.\nStatus: Active. Incorporated 1995-08-28 (30 years old). Share capital RM500k.\nRule-based risk tier: High\n\nRed flags (most severe first):\n- [critical] Liabilities exceed assets: equity -RM19k in FY2024.\n- [major] Net loss of -RM276k in FY2024; losses in every year on record.\n- [major] Operating cash flow was -RM139k in FY2024.\n- [major] Current ratio 0.98: short-term debts exceed short-term assets.\n- [major] Interest cover -5.37x in FY2024 (below 1.5x).\n- [minor] Renamed on 2025-11-27; formerly Gemilang Ventures Sdn. Bhd..\n- [minor] Latest accounts are for the year to 2024-06-30, 18 months before the record date.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-06-30).\n- FY2024: revenue RM2.08m, profit after tax -RM276k (net margin -13.2%), operating cash flow -RM139k.\n- FY2024 balance sheet: equity -RM19k, borrowings RM787k, cash RM128k, liabilities/assets 101%, current ratio 0.98, interest cover -5.37x.\n- Revenue change FY2022->FY2024: -10.4%; FY2023->FY2024: -7.4%.\n- Audit: FY2022 Unqualified (Audit Firm 4); FY2023 Unqualified (Audit Firm 4); FY2024 Unqualified (Audit Firm 4)\n\nPeople and ownership:\n- 5 directors. Director 1 holds a controlling 50.59%.\n- Shareholders: Director 1 50.59%, Director 3 25.88%, Director 4 13.39%, Director 5 10.14%\n- Former names: Gemilang Ventures Sdn. Bhd. (until 2025-11-27)\n\nLitigation:\n- 2 cases: 1 as defendant, 1 as plaintiff. 0 pending against it (claims RM0), 0 judgment(s) entered against it, 1 filed after the latest accounts."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: High**: Equity is negative and the company is consistently loss‑making.\n\nMutiara Delima Bakery Sdn. Bhd. runs coffee shops and cafés in Penang, incorporated in 1995, and reported revenue of RM2.08m in FY2024.\n\n**Red flags**\n- Critical: Liabilities exceed assets, equity –RM19k in FY2024.  \n- Major: Net loss of –RM276k in FY2024; losses in every year on record.  \n- Major: Operating cash flow was –RM139k in FY2024.  \n- Major: Current ratio 0.98, short‑term debts exceed short‑term assets.  \n- Major: Interest cover –5.37x in FY2024 (below the 1.5x threshold).\n\n**Financials (FY2024):** Revenue RM2.08m, down 7.4% from FY2023; profit after tax –RM276k; operating cash flow –RM139k; borrowings RM787k with cash RM128k; equity –RM19k.\n\n**Ownership & litigation:** Director 1 controls 50.59% and is the largest shareholder; other shareholders are Directors 3 (25.88%), 4 (13.39%) and 5 (10.14%). Two court cases exist (one as defendant, one as plaintiff) with no judgments against the company and one case filed after the latest accounts.",
+ "raw": "**Risk: High**: Equity is negative and the company is consistently loss‑making.\n\nMutiara Delima Bakery Sdn. Bhd. runs coffee shops and cafés in Penang, incorporated in 1995, and reported revenue of RM2.08m in FY2024.\n\n**Red flags**\n- Critical: Liabilities exceed assets, equity –RM19k in FY2024.  \n- Major: Net loss of –RM276k in FY2024; losses in every year on record.  \n- Major: Operating cash flow was –RM139k in FY2024.  \n- Major: Current ratio 0.98, short‑term debts exceed short‑term assets.  \n- Major: Interest cover –5.37x in FY2024 (below the 1.5x threshold).\n\n**Financials (FY2024):** Revenue RM2.08m, down 7.4% from FY2023; profit after tax –RM276k; operating cash flow –RM139k; borrowings RM787k with cash RM128k; equity –RM19k.\n\n**Ownership & litigation:** Director 1 controls 50.59% and is the largest shareholder; other shareholders are Directors 3 (25.88%), 4 (13.39%) and 5 (10.14%). Two court cases exist (one as defendant, one as plaintiff) with no judgments against the company and one case filed after the latest accounts.",
+ "usage": {
+  "queue_time": 0.369958675,
+  "prompt_tokens": 1004,
+  "prompt_time": 0.048154794,
+  "completion_tokens": 432,
+  "completion_time": 4.9816053799999995,
+  "total_tokens": 1436,
+  "total_time": 5.029760174,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 122
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795599762.9401038
+}

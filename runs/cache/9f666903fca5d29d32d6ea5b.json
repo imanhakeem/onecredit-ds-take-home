@@ -1,0 +1,25 @@
+{
+ "request": {
+  "model": "gemini-3.5-flash",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Seri Everbright Klinik Sdn. Bhd. (SYN-000783)\nBusiness: Perkhidmatan jagaan warga emas di rumah. Industry: Healthcare. State: Kedah.\nStatus: Active. Incorporated 1995-12-03 (30 years old). Share capital RM5.00m.\nRule-based risk tier: Low\n\nRed flags (most severe first):\n- [minor] Profitable in FY2024 after losses in FY2022, FY2023.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-12-31).\n- FY2024: revenue RM57.99m, profit after tax RM3.85m (net margin 6.6%), operating cash flow RM6.12m.\n- FY2024 balance sheet: equity RM39.51m, borrowings RM7.80m, cash RM5.57m, liabilities/assets 43%, current ratio 1.54, interest cover 12.81x.\n- Revenue change FY2022->FY2024: 32.0%; FY2023->FY2024: 20.2%.\n- Audit: FY2022 Unqualified (Audit Firm 8); FY2023 Unqualified (Audit Firm 8); FY2024 Unqualified (Audit Firm 8)\n\nPeople and ownership:\n- 2 directors. Director 1 holds a controlling 100%.\n- Shareholders: Director 1 100%\n\nLitigation:\n- 1 cases: 0 as defendant, 1 as plaintiff. 0 pending against it (claims RM0), 0 judgment(s) entered against it, 0 filed after the latest accounts."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Low**: The company shows solid revenues with clean audit reports and zero pending litigation against it.\n\nSeri Everbright Klinik Sdn. Bhd. provides home-based elderly care services in Kedah, operating for 30 years with a latest revenue of RM57.99m.\n\n**Red flags**\n- Profitable in FY2024 after losses in FY2022, FY2023.\n\n**Financials (FY2024):** Revenue reached RM57.99m, growing 20.2% from FY2023, with a net profit of RM3.85m and operating cash flow of RM6.12m. Borrowings stand at RM7.80m against cash of RM5.57m, backed by clean audit reports from Audit Firm 8 for all recorded years.\n\n**Ownership & litigation:** Director 1 retains 100% control of the company. It has no pending cases or judgments entered against it as a defendant, acting only as plaintiff in 1 court case.",
+ "usage": {
+  "completion_tokens": 229,
+  "prompt_tokens": 847,
+  "total_tokens": 1076
+ },
+ "model": "gemini-3.5-flash",
+ "at": 1795593851.9452991
+}

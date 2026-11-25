@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Bestari Kirana Ladang Sdn. Bhd. (SYN-001158)\nBusiness: Oil palm plantation and fresh fruit bunch supply. Industry: Agriculture. State: Selangor.\nStatus: Active. Incorporated 2023-08-11 (2 years old). Share capital RM2.50m.\nRule-based risk tier: Elevated\n\nRed flags (most severe first):\n- [major] 2 of 4 directors appointed in the last 12 months: Director 2 (2025-04-06), Director 4 (2025-03-08).\n- [major] Net loss of -RM4.13m in FY2024; losses in FY2024.\n- [major] Operating cash flow was -RM1.06m in FY2024.\n- [major] Interest cover -1.76x in FY2024 (below 1.5x).\n- [minor] Latest accounts are for the year to 2024-06-30, 18 months before the record date.\n- [minor] Only one year of accounts (FY2024), so no trend.\n\nFinancials:\n- Years on record: FY2024. Latest FY2024 (year to 2024-06-30).\n- FY2024: revenue RM62.46m, profit after tax -RM4.13m (net margin -6.6%), operating cash flow -RM1.06m.\n- FY2024 balance sheet: equity RM45.95m, borrowings RM27.24m, cash RM4.21m, liabilities/assets 49%, current ratio 1.81, interest cover -1.76x.\n- Audit: FY2024 Unqualified (Audit Firm 4)\n\nPeople and ownership:\n- 4 directors. Director 1 holds a controlling 52.86%.\n- Shareholders: Director 1 52.86%, Director 3 34.7%, Director 2 12.44%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Elevated**: Recent director turnover and multiple financial losses.\n\nBestari Kirana Ladang Sdn. Bhd. cultivates oil palm and supplies fresh fruit bunches in Selangor; incorporated 2023‑08‑11, 2 years old, with revenue RM62.46m (FY2024).\n\n**Red flags**\n- 2 of 4 directors appointed in the last 12 months (Director 2 on 2025‑04‑06, Director 4 on 2025‑03‑08).\n- Net loss of -RM4.13m in FY2024.\n- Operating cash flow was -RM1.06m in FY2024.\n- Interest cover -1.76x in FY2024 (below 1.5x).\n- Latest accounts are for the year to 2024‑06‑30, 18 months before the record date.\n\n**Financials (FY2024):** Revenue RM62.46m; profit after tax -RM4.13m (‑6.6% margin); operating cash flow -RM1.06m; equity RM45.95m, borrowings RM27.24m, cash RM4.21m; current ratio 1.81; interest cover -1.76x.\n\n**Ownership & litigation:** Director 1 controls 52.86% (total shareholders: Director 1 52.86%, Director 3 34.7%, Director 2 12.44%); 4 directors total, recent appointments noted; no court cases on record.",
+ "raw": "**Risk: Elevated**: Recent director turnover and multiple financial losses.\n\nBestari Kirana Ladang Sdn. Bhd. cultivates oil palm and supplies fresh fruit bunches in Selangor; incorporated 2023‑08‑11, 2 years old, with revenue RM62.46m (FY2024).\n\n**Red flags**\n- 2 of 4 directors appointed in the last 12 months (Director 2 on 2025‑04‑06, Director 4 on 2025‑03‑08).\n- Net loss of -RM4.13m in FY2024.\n- Operating cash flow was -RM1.06m in FY2024.\n- Interest cover -1.76x in FY2024 (below 1.5x).\n- Latest accounts are for the year to 2024‑06‑30, 18 months before the record date.\n\n**Financials (FY2024):** Revenue RM62.46m; profit after tax -RM4.13m (‑6.6% margin); operating cash flow -RM1.06m; equity RM45.95m, borrowings RM27.24m, cash RM4.21m; current ratio 1.81; interest cover -1.76x.\n\n**Ownership & litigation:** Director 1 controls 52.86% (total shareholders: Director 1 52.86%, Director 3 34.7%, Director 2 12.44%); 4 directors total, recent appointments noted; no court cases on record.",
+ "usage": {
+  "queue_time": 0.270555899,
+  "prompt_tokens": 883,
+  "prompt_time": 0.145898979,
+  "completion_tokens": 355,
+  "completion_time": 2.069336808,
+  "total_tokens": 1238,
+  "total_time": 2.215235787,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 20
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795599881.143402
+}

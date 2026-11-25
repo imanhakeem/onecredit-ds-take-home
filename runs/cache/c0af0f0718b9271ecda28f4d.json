@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Jaya Unity Precision Sdn. Bhd. (SYN-001529)\nBusiness: Precision machining of metal parts for electronics. Industry: Manufacturing. State: Sarawak.\nStatus: Active. Incorporated 1988-03-23 (37 years old). Share capital RM250k.\nRule-based risk tier: Low\n\nRed flags (most severe first):\n- [minor] Profitable in FY2024 after losses in FY2022, FY2023.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-09-30).\n- FY2024: revenue RM16.15m, profit after tax RM745k (net margin 4.6%), operating cash flow RM1.89m.\n- FY2024 balance sheet: equity RM3.63m, borrowings RM2.66m, cash RM1.31m, liabilities/assets 68%, current ratio 1.34, interest cover 7.70x.\n- Revenue change FY2022->FY2024: 35.8%; FY2023->FY2024: 20.2%.\n- Audit: FY2022 Unqualified (Audit Firm 1); FY2023 Unqualified (Audit Firm 1); FY2024 Unqualified (Audit Firm 1)\n\nPeople and ownership:\n- 5 directors. Director 1 holds a controlling 75.67%.\n- Shareholders: Director 1 75.67%, Director 5 17.16%, Director 4 7.17%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Low**: No serious red‑flag issues; only a minor profitability turnaround.\n\nJaya Unity Precision Sdn. Bhd. does precision machining of metal parts for electronics in Sarawak, incorporated in 1988 (37 years old) with share capital RM250k and FY2024 revenue RM16.15m.\n\n**Red flags**\n- Minor: Became profitable in FY2024 after losses in FY2022 and FY2023.\n\n**Financials (FY2024):** Revenue RM16.15m, up 20.2% from FY2023; profit after tax RM745k; operating cash flow RM1.89m; equity RM3.63m, borrowings RM2.66m, cash RM1.31m; current ratio 1.34 and interest cover 7.70×.\n\n**Ownership & litigation:** Director 1 controls 75.67% and is the largest shareholder; other shareholders are Director 5 (17.16%) and Director 4 (7.17%); no court cases on record.",
+ "raw": "**Risk: Low**: No serious red‑flag issues; only a minor profitability turnaround.\n\nJaya Unity Precision Sdn. Bhd. does precision machining of metal parts for electronics in Sarawak, incorporated in 1988 (37 years old) with share capital RM250k and FY2024 revenue RM16.15m.\n\n**Red flags**\n- Minor: Became profitable in FY2024 after losses in FY2022 and FY2023.\n\n**Financials (FY2024):** Revenue RM16.15m, up 20.2% from FY2023; profit after tax RM745k; operating cash flow RM1.89m; equity RM3.63m, borrowings RM2.66m, cash RM1.31m; current ratio 1.34 and interest cover 7.70×.\n\n**Ownership & litigation:** Director 1 controls 75.67% and is the largest shareholder; other shareholders are Director 5 (17.16%) and Director 4 (7.17%); no court cases on record.",
+ "usage": {
+  "queue_time": 0.158347449,
+  "prompt_tokens": 802,
+  "prompt_time": 0.023027619,
+  "completion_tokens": 306,
+  "completion_time": 0.75769437,
+  "total_tokens": 1108,
+  "total_time": 0.780721989,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 76
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795599965.9405255
+}

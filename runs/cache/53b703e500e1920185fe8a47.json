@@ -1,0 +1,33 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Global Pacific Perunding Sdn. Bhd. (SYN-000302)\nBusiness: Management consulting for SMEs. Industry: Professional Services. State: Perak.\nStatus: Active. Incorporated 2014-01-15 (11 years old). Share capital RM500k.\nRule-based risk tier: High\n\nRed flags (most severe first):\n- [critical] No financial statements on record, so size and health are unknown.\n\nFinancials:\n- None on record.\n\nPeople and ownership:\n- 3 directors. Director 2 holds a controlling 58.7%.\n- Shareholders: Director 2 58.7%, Director 3 29.76%, Director 1 11.54%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: High**: No financial statements on record, so size and health are unknown.\n\nGlobal Pacific Perunding Sdn. Bhd. provides management consulting for SMEs in Perak, incorporated 2014‑01‑15 (11 years old) with share capital RM500k and no disclosed revenue.\n\n**Red flags**\n- No financial statements on record (critical).\n\n**Financials (FY 2025):** No accounts filed; revenue, profit, cash flow and debt are unknown.\n\n**Ownership & litigation:** 3 directors; Director 2 holds a controlling 58.7% (shareholders: Director 2 58.7%, Director 3 29.76%, Director 1 11.54%). No court cases on record.",
+ "raw": "**Risk: High**: No financial statements on record, so size and health are unknown.\n\nGlobal Pacific Perunding Sdn. Bhd. provides management consulting for SMEs in Perak, incorporated 2014‑01‑15 (11 years old) with share capital RM500k and no disclosed revenue.\n\n**Red flags**\n- No financial statements on record (critical).\n\n**Financials (FY 2025):** No accounts filed; revenue, profit, cash flow and debt are unknown.\n\n**Ownership & litigation:** 3 directors; Director 2 holds a controlling 58.7% (shareholders: Director 2 58.7%, Director 3 29.76%, Director 1 11.54%). No court cases on record.",
+ "usage": {
+  "queue_time": 0.318429563,
+  "prompt_tokens": 620,
+  "prompt_time": 0.026272505,
+  "completion_tokens": 322,
+  "completion_time": 0.669882366,
+  "total_tokens": 942,
+  "total_time": 0.696154871,
+  "completion_tokens_details": {
+   "reasoning_tokens": 158
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795599734.0436804
+}

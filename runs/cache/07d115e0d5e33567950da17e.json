@@ -1,0 +1,25 @@
+{
+ "request": {
+  "model": "gemini-3.5-flash",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Cahaya Golden Systems Sdn. Bhd. (SYN-000545)\nBusiness: Software development for small business accounting. Industry: Technology. State: Selangor.\nStatus: Winding up. Incorporated 2019-09-29 (6 years old). Share capital RM2.50m.\nRule-based risk tier: High\n\nRed flags (most severe first):\n- [critical] Company status is 'Winding up', not Active.\n- [critical] FY2022 audit: 'Unqualified with material uncertainty on going concern' (Audit Firm 2).\n- [critical] Winding-up petition(s) against the company: filed 2023-10-13, judgment entered, RM10k.\n- [major] 2 of 3 directors appointed in the last 12 months including the majority shareholder: Director 1 (2025-05-03), Director 2 (2025-04-13).\n- [major] 4 pending case(s) as defendant, claims totalling RM2.50m (19.2% of FY2024 revenue).\n- [minor] Latest accounts are for the year to 2024-03-31, 21 months before the record date.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-03-31).\n- FY2024: revenue RM13.01m, profit after tax RM1.28m (net margin 9.8%), operating cash flow RM1.33m.\n- FY2024 balance sheet: equity RM9.63m, borrowings RM4.35m, cash RM2.02m, liabilities/assets 37%, current ratio 1.62, interest cover 8.03x.\n- Revenue change FY2022->FY2024: 5.1%; FY2023->FY2024: 2.5%.\n- Audit: FY2022 Unqualified with material uncertainty on going concern (Audit Firm 2); FY2023 Unqualified (Audit Firm 2); FY2024 Unqualified (Audit Firm 2)\n\nPeople and ownership:\n- 3 directors. Director 2 holds a controlling 52.17%.\n- Shareholders: Director 2 52.17%, Director 1 32.4%, Director 3 15.43%\n\nLitigation:\n- 8 cases: 8 as defendant, 0 as plaintiff. 4 pending against it (claims RM2.50m), 1 judgment(s) entered against it, 4 filed after the latest accounts."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: High**: The company is in winding up status following a court petition judgment.\n\nCahaya Golden Systems Sdn. Bhd. is a 6-year-old accounting software development company based in Selangor with FY2024 revenue of RM13.01m.\n\n**Red flags**\n- Company status is 'Winding up', not Active.\n- FY2022 audit: 'Unqualified with material uncertainty on going concern' (Audit Firm 2).\n- Winding-up petition filed 2023-10-13, judgment entered for RM10k.\n- 2 of 3 directors appointed in last 12 months: Director 1 (2025-05-03) and majority owner Director 2 (2025-04-13).\n- 4 pending cases as defendant, claims totalling RM2.50m (19.2% of FY2024 revenue).\n\n**Financials (FY2024):** FY2024 revenue was RM13.01m with profit after tax of RM1.28m and operating cash flow of RM1.33m. Borrowings stood at RM4.35m with cash of RM2.02m.\n\n**Ownership & litigation:** Director 2 controls 52.17% of shares, with Director 1 (32.4%) and Director 3 (15.43%). The company has 8 cases as defendant, including 4 pending (RM2.50m claims) and 1 judgment entered against it.",
+ "usage": {
+  "completion_tokens": 350,
+  "prompt_tokens": 1051,
+  "total_tokens": 2695
+ },
+ "model": "gemini-3.5-flash",
+ "at": 1795591627.3664143
+}

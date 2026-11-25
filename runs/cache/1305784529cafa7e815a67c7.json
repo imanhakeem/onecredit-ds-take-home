@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "openai/gpt-oss-120b",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nRisk levels:\n- High: any critical issue: status not Active; a pending winding-up petition, or one with judgment entered, against the\n  company; an audit disclaimer, adverse opinion or going-concern uncertainty in any year; negative equity; or no\n  financial statements at all.\n- Elevated: no critical issue, but a material one: a net loss or negative operating cash flow in the latest year;\n  current ratio below 1; interest cover below 1.5x; revenue down more than 20% over the years on record; liabilities\n  above 80% of assets; a judgment entered against it; pending claims against it of RM500k or more (or 5% of revenue);\n  a past winding-up petition; or half the board (or the majority shareholder) appointed in the last 12 months.\n- Low: none of the above."
+   },
+   {
+    "role": "user",
+    "content": "Company record (JSON):\n{\"registrationNumber\":\"SYN-000333\",\"profile\":{\"companyName\":\"Gemilang Harmoni Enterprise Sdn. Bhd.\",\"status\":\"Active\",\"companyType\":\"Private limited company\",\"incorporationDate\":\"1997-10-21\",\"industry\":\"Retail\",\"state\":\"Sarawak\",\"natureOfBusiness\":\"Retail of textiles and baju kurung\",\"shareCapital\":5000000,\"formerNames\":[{\"name\":\"Unity Industries Sdn. Bhd.\",\"changedOn\":\"2025-09-03\"}]},\"relationships\":{\"directors\":[{\"name\":\"Director 1\",\"designation\":\"Managing Director\",\"appointedOn\":\"2014-04-06\"},{\"name\":\"Director 2\",\"designation\":\"Director\",\"appointedOn\":\"2023-01-28\"},{\"name\":\"Director 3\",\"designation\":\"Director\",\"appointedOn\":\"2010-08-09\"}],\"shareholders\":[{\"type\":\"individual\",\"name\":\"Director 1\",\"percentage\":25.02},{\"type\":\"individual\",\"name\":\"Director 2\",\"percentage\":45.57},{\"type\":\"individual\",\"name\":\"Director 3\",\"percentage\":29.41}]},\"financials\":{\"years\":[]},\"litigation\":{\"cases\":[]}}"
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: High**: No financial statements filed for any year.\n\nGemilang Harmoni Enterprise Sdn. Bhd. retails textiles and baju kurung in Sarawak; incorporated 21 Oct 1997; share capital RM5.00m; latest revenue not disclosed.\n\n**Red flags**\n- No financial statements on record (financials years array empty).\n\n**Financials (FY ):** No accounts available; revenue, profit, cash flow and debt figures are missing.\n\n**Ownership & litigation:** Controlled by three individual shareholders/directors (Director 1 25.02%, Director 2 45.57%, Director 3 29.41%); no recent director changes beyond appointments listed; no litigation cases recorded.",
+ "raw": "**Risk: High**: No financial statements filed for any year.\n\nGemilang Harmoni Enterprise Sdn. Bhd. retails textiles and baju kurung in Sarawak; incorporated 21 Oct 1997; share capital RM5.00m; latest revenue not disclosed.\n\n**Red flags**\n- No financial statements on record (financials years array empty).\n\n**Financials (FY ):** No accounts available; revenue, profit, cash flow and debt figures are missing.\n\n**Ownership & litigation:** Controlled by three individual shareholders/directors (Director 1 25.02%, Director 2 45.57%, Director 3 29.41%); no recent director changes beyond appointments listed; no litigation cases recorded.",
+ "usage": {
+  "queue_time": 0.159896549,
+  "prompt_tokens": 818,
+  "prompt_time": 0.028551709,
+  "completion_tokens": 197,
+  "completion_time": 0.408838136,
+  "total_tokens": 1015,
+  "total_time": 0.437389845,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 35
+  }
+ },
+ "model": "openai/gpt-oss-120b",
+ "at": 1795600184.9331894
+}

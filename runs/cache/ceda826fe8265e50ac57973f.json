@@ -1,0 +1,25 @@
+{
+ "request": {
+  "model": "gemini-3.5-flash",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Teguh Bestari Medical Sdn. Bhd. (SYN-000640)\nBusiness: Dental clinic and orthodontic services. Industry: Healthcare. State: Sabah.\nStatus: Active. Incorporated 1988-10-17 (37 years old). Share capital RM100k.\nRule-based risk tier: Elevated\n\nRed flags (most severe first):\n- [major] 1 judgment(s) entered against it, claims totalling RM311k.\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-12-31).\n- FY2024: revenue RM1.16m, profit after tax RM90k (net margin 7.8%), operating cash flow RM169k.\n- FY2024 balance sheet: equity RM614k, borrowings RM471k, cash RM59k, liabilities/assets 48%, current ratio 1.42, interest cover 5.58x.\n- Revenue change FY2022->FY2024: 8.2%; FY2023->FY2024: 6.4%.\n- Audit: FY2022 Unqualified (Audit Firm 7); FY2023 Unqualified (Audit Firm 7); FY2024 Unqualified (Audit Firm 7)\n\nPeople and ownership:\n- 2 directors. Director 1 holds a controlling 63.91%.\n- Shareholders: Director 1 63.91%, Director 2 36.09%\n\nLitigation:\n- 6 cases: 1 as defendant, 5 as plaintiff. 0 pending against it (claims RM0), 1 judgment(s) entered against it, 1 filed after the latest accounts."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Elevated**: One judgment has been entered against the company with claims totalling RM311k.\n\nTeguh Bestari Medical Sdn. Bhd. provides dental clinic and orthodontic services in Sabah, operating for 37 years with FY2024 revenue of RM1.16m.\n\n**Red flags**\n- 1 judgment entered against it, claims totalling RM311k\n\n**Financials (FY2024):** Revenue was RM1.16m with a profit after tax of RM90k and operating cash flow of RM169k. Revenue grew 6.4% from FY2023, with balance sheet borrowings of RM471k and cash of RM59k.\n\n**Ownership & litigation:** Director 1 holds a controlling 63.91% stake, with Director 2 owning the remaining 36.09%. Across 6 court cases (1 as defendant, 5 as plaintiff), 1 judgment was entered against it and 1 case was filed after the latest accounts.",
+ "usage": {
+  "completion_tokens": 225,
+  "prompt_tokens": 839,
+  "total_tokens": 1490
+ },
+ "model": "gemini-3.5-flash",
+ "at": 1795593732.6531749
+}

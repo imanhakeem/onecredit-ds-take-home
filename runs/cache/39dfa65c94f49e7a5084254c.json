@@ -1,0 +1,25 @@
+{
+ "request": {
+  "model": "gemini-3.5-flash",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You write summaries for a team that vets Malaysian companies before choosing them as suppliers or project partners. A reviewer reads your summary first, in under a minute, to decide whether the company deserves a closer look. Missing a red flag is the worst mistake you can make; a wrong number is the second worst. The record is as of 31 December 2025.\n\nWrite the summary in Markdown, at most 170 words, in exactly this shape:\n\n**Risk: <High|Elevated|Low>**: <one sentence on the main reason>\n\n<One sentence: what the company does, where, how old it is, and how big (latest revenue).>\n\n**Red flags**\n- <most serious first, at most 5 bullets, each specific: give the amount, year or date>\n(If there are none, write \"- None found in the record.\")\n\n**Financials (FY<latest year>):** <one or two sentences: revenue and its trend, profit, cash flow, debt.>\n\n**Ownership & litigation:** <one or two sentences: who controls it, corporate shareholders, recent director changes, court cases.>\n\nRules:\n- Use only numbers that appear in the input. Do not calculate new ones. Write amounts like RM4.42m or RM356k.\n- If something is missing (no accounts, a missing year), say so. Never fill the gap with a guess.\n- Directors and shareholders have placeholder names like \"Director 1\"; use them as given.\n- No advice beyond the risk level, no preamble, no closing remarks.\n\nYou are given facts already checked and computed from the record, including the red flags and the risk level. Use the risk level as given. Every [critical] and [major] flag must appear in Red flags; mention [minor] ones only if there is room, in the last section. Copy numbers exactly as written in the facts."
+   },
+   {
+    "role": "user",
+    "content": "Facts:\nCompany: Global Murni Plastik Sdn. Bhd. (SYN-001085)\nBusiness: Manufacture of furniture from rubberwood. Industry: Manufacturing. State: Perak.\nStatus: Active. Incorporated 2017-09-29 (8 years old). Share capital RM5.00m.\nRule-based risk tier: Low\n\nRed flags (most severe first):\n- [minor] 2 of 5 directors appointed in the last 12 months: Director 4 (2025-11-29), Director 5 (2025-08-05).\n\nFinancials:\n- Years on record: FY2022, FY2023, FY2024. Latest FY2024 (year to 2024-09-30).\n- FY2024: revenue RM24.76m, profit after tax RM1.18m (net margin 4.8%), operating cash flow RM2.99m.\n- FY2024 balance sheet: equity RM18.52m, borrowings RM9.86m, cash RM4.10m, liabilities/assets 48%, current ratio 1.65, interest cover 3.86x.\n- Revenue change FY2022->FY2024: 6.9%; FY2023->FY2024: 4.3%.\n- Audit: FY2022 Unqualified (Audit Firm 8); FY2023 Unqualified (Audit Firm 8); FY2024 Unqualified (Audit Firm 8)\n\nPeople and ownership:\n- 5 directors. No majority holder; largest is Director 2 with 42.83%.\n- Shareholders: Director 2 42.83%, Director 1 37.85%, Director 5 13.75%, Director 3 5.57%\n\nLitigation:\n- No court cases on record."
+   }
+  ],
+  "temperature": 0.2,
+  "reasoning_effort": "low"
+ },
+ "text": "**Risk: Low**: The company shows stable financial growth, strong operating cash flow, and healthy debt coverage with no critical red flags.\n\nGlobal Murni Plastik Sdn. Bhd. manufactures rubberwood furniture in Perak, operating for 8 years with a latest revenue of RM24.76m.\n\n**Red flags**\n- 2 of 5 directors appointed in the last 12 months: Director 4 (2025-11-29) and Director 5 (2025-08-05).\n\n**Financials (FY2024):** Revenue reached RM24.76m (up 4.3% from FY2023) with a profit after tax of RM1.18m. The company generated operating cash flow of RM2.99m, holding cash of RM4.10m against borrowings of RM9.86m.\n\n**Ownership & litigation:** The company has no majority shareholder; the largest owner is Director 2 (42.83%), followed by Director 1 (37.85%), Director 5 (13.75%), and Director 3 (5.57%). There are no court cases on record.",
+ "usage": {
+  "completion_tokens": 263,
+  "prompt_tokens": 863,
+  "total_tokens": 1126
+ },
+ "model": "gemini-3.5-flash",
+ "at": 1795593971.923164
+}
