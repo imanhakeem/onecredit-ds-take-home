@@ -60,7 +60,7 @@ Some things I found in the data that shaped this:
 - The statements are internally consistent (gross profit = revenue − cost of sales, assets = liabilities + equity,
   and so on); I checked, so data errors are not part of this problem.
 
-## 2. What you built
+## 2. What was built
 
 ```
 data/companies.jsonl
@@ -96,7 +96,7 @@ explained to an auditor. Its prompt is about a third the size of v2's, which mat
 `v0` matters too: it is the honest baseline. If an LLM version can't beat a template on the things the team cares
 about, the LLM isn't worth its cost or its risk.
 
-## 3. How you know whether it's good
+## 3. How do we know whether it's good
 
 Three layers, from cheapest and most trusted to most expensive and least trusted:
 
